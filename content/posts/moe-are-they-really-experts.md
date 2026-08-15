@@ -190,7 +190,7 @@ So: **feature space is more informative than domain space**, and it is possible 
 
 A striking pattern shows up when tracking individual tokens rather than domains: **the same token ID tends to route to the same expert regardless of its context**. For example, the token "ed" can be the suffix of many unrelated words such as "preferred" or "led," and "an" can appear inside "an apple" or "another" - semantically and syntactically very different contexts. Despite that, both show very strong specialization toward only a few fixed experts across all their occurrences. This is the same kind of result reported in OpenMoE.
 
-In other words, routing appears to be based largely on **token identity**, not high-level semantics of the surrounding sentence. This matches the finding the OpenMoE paper [11] calls **Context-Independent Specialization**, and it is consistent with the token-ID-level structure noted in Section 4.1. It also helps explain the routing "stickiness" observed in Section 4.2, since repeated or similar token IDs would naturally route consistently.
+In other words, routing appears to be based largely on **token identity**, not high-level semantics of the surrounding sentence. This matches the finding the OpenMoE paper [11] calls **Context-Independent Specialization**.
 
 ### 4.5 Language specialization
 
