@@ -21,10 +21,9 @@ draft: false
    - [4.3 Feature-level analysis with sparse autoencoders](#43-feature-level-analysis-with-sparse-autoencoders)
    - [4.4 Context-independent specialization](#44-context-independent-specialization)
    - [4.5 Language specialization](#45-language-specialization)
-5. [Interactive dashboards](#interactive-dashboards)
-6. [Discussion: so, are they experts?](#discussion-so-are-they-experts)
-7. [Future work](#future-work)
-8. [References](#references)
+5. [Discussion: so, are they experts?](#discussion-so-are-they-experts)
+6. [Future work](#future-work)
+7. [References](#references)
 9. [How to cite this work](#how-to-cite-this-work)
 
 ---
@@ -42,6 +41,10 @@ This write-up covers two things: the groundwork - what MoE is, how it works mech
 MoE is not new. It goes back to Jacobs, Jordan, Nowlan, and Hinton's 1991 paper on adaptive mixtures of local experts [1], later extended by Jordan and Jacobs into hierarchical mixtures trained with an EM algorithm [2]. The core idea from three decades ago is basically unchanged: instead of running every parameter on every input, you conditionally route each input to only a portion of the network. This is usually called *conditional computation*.
 
 The modern deep learning version took off with the Sparsely-Gated Mixture-of-Experts layer [3], which showed you could scale a network to enormous size while keeping the *compute per token* roughly fixed, because each token only touches a small subset of the parameters. Google's Switch Transformer [4] pushed this further by simplifying routing to top-1 and reporting roughly a 7x pre-training speedup over a comparably-sized dense T5-Base model. Since then, MoE has become close to standard for frontier open models - Qwen2.5 [5], Skywork-MoE [6], Mixtral [10], DeepSeekMoE, and others all build on the same basic skeleton, just tweaking the routing and balancing tricks.
+
+![](/imgs/ffn_experts.png)
+
+*Switch Transformer encoder block illustrating token routing through a sparse Mixture-of-Experts (MoE) feed-forward layer, adapted from the [*Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity*](https://arxiv.org/abs/2101.03961) paper.*
 
 **What actually changes in the architecture?** In a standard Transformer block, the feed-forward network (FFN) is dense - every token passes through the same weights. MoE's main structural change is to replace that single FFN with a bank of *N* smaller FFNs (the "experts"), plus a small routing network that decides, per token, which expert(s) should handle it. At inference, only the top-*k* experts for a given token actually run; the rest sit idle for that token, which is where the compute savings come from.
 
@@ -139,6 +142,11 @@ A separate question from *which* expert gets a domain is *how long the router st
 ### 4.3 Feature-level analysis with sparse autoencoders
 
 Domain-level statistics only go so far, for the same reason neuron-level statistics only go so far in dense networks: **superposition**. A given expert can be "responsible for" a domain in the aggregate while its individual activations still encode many unrelated concepts at once. To get underneath that, this project trains a separate sparse autoencoder on each expert's routed-token activations and studies the resulting *features* - directions in activation space - rather than raw domain counts.
+
+![](/imgs/sae_img.png)
+
+*Sparse Autoencoder (SAE) architecture from the* [*Sparse Autoencoders Find Highly Interpretable Features in Language Models*](https://arxiv.org/abs/2309.08600) *paper.* 
+
 
 After training the sparse autoencoders, I extracted the top features routed by each expert. The first and last layers are shown below, using the highest-mass features:
 
