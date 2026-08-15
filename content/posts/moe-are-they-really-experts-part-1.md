@@ -125,7 +125,7 @@ A separate question from *which* expert gets a domain is *how long the router st
 - **Intermediate encoder layers show the strongest routing consistency**, suggesting specialization peaks somewhere in the middle of the network rather than at the very first or very last layer.
 - Practically, this "stickiness" is a hint that routing decisions could be cached or amortized across neighboring tokens to save compute.
 
-{{< rawhtml >}}
+
 <div class="dashboard-embed">
   <iframe
     src="/dashboards/moe_routing_visualization.html"
@@ -134,7 +134,6 @@ A separate question from *which* expert gets a domain is *how long the router st
     style="width: 100%; height: 820px; border: 1px solid rgba(0,0,0,0.12); border-radius: 14px; background: #fff;"
   ></iframe>
 </div>
-{{< /rawhtml >}}
 
 
 ### 4.3 Feature-level analysis with sparse autoencoders

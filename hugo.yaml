@@ -3,6 +3,13 @@ locale: en-us
 title: "aimen.log"
 theme: ["PaperMod"]
 
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+      
 params:
   description: "A research blog on machine learning, robot learning, self-supervised learning, large language models, representation learning, and intelligent systems."
 
