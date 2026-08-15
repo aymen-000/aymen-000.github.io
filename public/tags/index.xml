@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on aimen.log</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on aimen.log</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Llm</title>
+      <link>http://localhost:1313/tags/llm/</link>
+      <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/llm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mechanistic-Interpretability</title>
+      <link>http://localhost:1313/tags/mechanistic-interpretability/</link>
+      <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/mechanistic-interpretability/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Moe</title>
+      <link>http://localhost:1313/tags/moe/</link>
+      <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/moe/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sparse-Autoencoders</title>
+      <link>http://localhost:1313/tags/sparse-autoencoders/</link>
+      <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/sparse-autoencoders/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Transformer</title>
+      <link>http://localhost:1313/tags/transformer/</link>
+      <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/transformer/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

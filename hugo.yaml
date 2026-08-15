@@ -1,0 +1,79 @@
+baseURL: https://aymen-000.github.io/
+locale: en-us
+title: "aimen.log"
+theme: ["PaperMod"]
+
+params:
+  description: "A research blog on machine learning, robot learning, self-supervised learning, large language models, representation learning, and intelligent systems."
+
+  author: "Aimen Boukhari"
+
+  keywords:
+    - machine learning
+    - robot learning
+    - self-supervised learning
+    - large language models
+    - representation learning
+    - latent spaces
+    - mechanistic interpretability
+    - robotics
+    - artificial intelligence
+    - research
+
+  defaultTheme: light
+  disableThemeToggle: false
+
+  mainSections:
+    - posts
+
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowReadingTime: true
+  ShowPostNavLinks: true
+  ShowShareButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowToc: true
+  math: true
+
+  homeInfoParams:
+    Title: "~/research/machine-learning"
+
+    Content: |
+      Welcome! I'm Aimen Boukhari.
+
+      This website is where I document what I learn and explore in  AI.
+      I write about mechanistic interpretability, robot learning, self-supervised learning,
+      and other topics that spark my curiosity. Stay tuned as I continue exploring these
+      areas and share what I discover.
+      and research ideas that I find interesting.
+
+  AlignSocialIconsTo: left
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/aymen-000"
+    - name: linkedin 
+      url: "https://www.linkedin.com/in/aimen-boukhari-5a64b9284/"
+
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 10
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 20
+    - identifier: archive
+      name: Archive
+      url: /archives/
+      weight: 30
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 40
+    - identifier: contact
+      name: Contact
+      url: /contact/
+      weight: 50
